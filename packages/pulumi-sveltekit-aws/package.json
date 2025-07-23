@@ -1,0 +1,47 @@
+{
+  "name": "@repo/pulumi-sveltekit-aws",
+  "version": "0.1.0",
+  "description": "SvelteKit adapter and Pulumi components for deploying to AWS",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./adapter": {
+      "types": "./dist/adapter/index.d.ts",
+      "import": "./dist/adapter/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "scripts": {
+    "build": "tsc && cp -r templates dist/",
+    "dev": "tsc --watch",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@pulumi/aws": "^6.83.0",
+    "@pulumi/pulumi": "^3.147.0",
+    "archiver": "^7.0.1",
+    "esbuild": "^0.24.2",
+    "globby": "^14.0.2",
+    "mime-types": "^2.1.35"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@sveltejs/kit": "^2.15.0",
+    "@types/archiver": "^6.0.3",
+    "@types/mime-types": "^2.1.4",
+    "@types/node": "^22.15.30",
+    "typescript": "^5.8.2"
+  },
+  "peerDependencies": {
+    "@sveltejs/kit": "^2.0.0"
+  },
+  "license": "MIT"
+}
